@@ -1,0 +1,47 @@
+h1{
+  font-style: italic;
+  text-align: center;
+  
+}
+.Container1{
+border-style: solid;
+border-color:lightskyblue;
+}
+.InitialSetup{
+  width:min-content;
+  border-style: dashed;
+  border-color: lightseagreen;
+}
+.labels{
+  display: flex;
+  justify-content:last baseline;
+  align-items: center;
+}
+.labelText {
+  width: 100px;
+  overflow-x: scroll;
+}
+
+.printChallenges {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.labelHeader {
+  width: 100px;
+  text-align: center;
+  background-color:lightblue;
+}
+
+.printActivities {
+  display: flex;
+  justify-content: space-around;
+}
+.printNonActivities {
+  border-style: dashed;
+  border-color: lightseagreen;
+}
+.printSelActivities {
+  border-style: dashed;
+  border-color: lightseagreen;
+}
