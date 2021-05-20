@@ -1,6 +1,15 @@
 h1{
   font-style: italic;
   text-align: center;
+    animation-duration: 3s;
+  animation-name: slidein;
+  background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    animation-duration: 6s;
+    animation-name: slidein
   
 }
 .Container1{

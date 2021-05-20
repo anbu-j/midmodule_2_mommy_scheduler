@@ -29,15 +29,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project aims at building an online scheduler for Mommies who struggle to complete all their planned activities and find time for themselves
+This project aims at building an online scheduler for Mommies who struggle to complete all their planned activities and find time for themselves. It schedules the activities and solve their challenges by alloting time daily based on priorities.This is a systematic approach to find some ** ME TIME ** for all busy mommies who are juggling to fit into their schedule.
 
 ## Built With
  
 The game is developed using the following:
-* HTML
+* React
+* React Router Dom
 * Javascript
 * CSS
-
+*  React -Bootstrap
 ## Getting Started
 
 To start the scheduler;
@@ -45,6 +46,7 @@ To start the scheduler;
 ### Prerequisites
 1. Visual Studio 
 2. Chrome (Version 89.0.4389.128 or later)
+3. API
 
 ### Installation
 Clone the Git repository to your local system <br>
@@ -54,16 +56,17 @@ Clone the Git repository to your local system <br>
 ```
 
 ## Usage
-<!--Game starts when the user clicks on the button "**Start Game**". The game ends automatically after 5 rounds. If the user wants to replay, the "**Restart**" button can be utilised. 
+<!--The Scheduler starts when the user selects the different checkboxes and clicks on the button "**Start **". The scheduler charts the schedule of activities based on priorities (* higher priority will be considered first- on a scale of (1-10) *) and check it with time duration for each activity to finish, calculates to find out the remaining time available in a day to finish the other activities with next high priority. If the user has still some free time left,then we will let user select from their challenges with highest priority and add it that to activity (*solving their challenge to find time to do *) and incorporate that to schedule chart.We have a timer to remind the user when to start and stop their activities in a time frame assigned. 
 
- The game screen is split into 3 sections 
- * **PLAYER CONSOLE :** shows the player turns, status of play (*future feature*), Start and Restart buttons.
- * **GAME CONSOLE :** shows the "**Mystery Sentence**" to be predicted, a keyboard to predict a letter of the mystery sentence and a shortcut button "**Predict the Sentence**" to winning a round of "**Mystery Sentence**"
- * **SCORE BOARD :** shows the "**Score**" and "**Turns left**" for each player during a round of "**Mystery Sentence**". After each round, the winner of the round gets all the points. Maximum points scored in all five rounds determines the winner of the game.-->
+ The Mommy Scheduler screen is split into 4 sections 
+ * **M CHALLENGES :** It lets the the users to identify their "**Challenges**" from a table of common challenges facing in daily life and identified challenges will be displayed along with priorities.
+ * **M ACTIVITIES :** It lets the user to choose their "**Activities**" from a table based on time taken to finish, whether it is a daily or weekly activity or a mandatory one. 
+ * **REVIEW SCHEDULE :** It displays the "** identified challenges and activities **" from the previous two links and let the users reassign their priorities and choices for final reviewing.
+ * ** M SCHEDULER :** It displays the final schedule table with timers enabled with start, stop and complete button. Also we calculate left over time in a day and allows users to add their challenges to activity field and thus solving their time constraints to finish their challenges.
 
 
 ## Features
-<!--1. Turns of each player is highlighted with a red background.
+<!--1. Time left for activities  is highlighted with different colors.
 2. The selection made by the user on the on-screen keyboard turns the color of the key to
     * "**Golden**" upon matching a letter in the mystery sentence 
     * "**Grey**" upon not matching a letter in the mystery sentence.

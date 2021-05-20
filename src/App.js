@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import MScheduler from './components/MScheduler';
 import MChallenge from './components/MChallenge';
-//import MActivities from './components/MActivities';
+import MActivities from './components/MActivities';
 import MReview from './components/MReview';
 
 //import {BrowserRouter as  Router,Route, Switch} from 'react-router-dom';

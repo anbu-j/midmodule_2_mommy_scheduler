@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+//import Datetime from 'react-datetime';
+//import "react-datetime/css/react-datetime.css";
 
 class MSchedule extends Component {
    
@@ -45,10 +47,14 @@ class MSchedule extends Component {
           isOn: true,
           time: this.state.time,
           start: Date.now() - this.state.time
+          //start: Date.getHours()+":"+Date.getMinutes()+":"+Date.getSeconds()+ Date.getHours
+          //start: Date.getHours+":"+Date.getMinutes+":"+Date.getSeconds
+          //start: Date.now()>this.state.time? 
         })
         this.timer = setInterval(() => this.setState({
           time: Date.now() - this.state.start
-        }), 1);
+            //time: (Date.getHours+":"+Date.getMinutes+":"+Date.getSeconds - this.state.start)
+        }), 1000);
       }
       stopTimer() {
         this.setState({isOn: false})
@@ -63,7 +69,16 @@ class MSchedule extends Component {
             <div>
                 <div>
                     <h1> Mommy's Schedule </h1> 
-                    {/*<h1>{console.log(t)}</h1>*/}
+                    {/*<h1>{console.log(t)}</h1>
+                    <h3>timer: {this.state.time}</h3>
+                    <h3>{Math.floor((Date.Datetime/1000)%60)}</h3>*/}
+                    <h3>{Date()}</h3>
+                    <h3>{Math.floor((Date.now()/(1000*60*60*24)))}</h3>
+                    <h3>{Math.floor((Date.now()/(1000*60*60))%24)}</h3>
+                    <h3>{Math.floor((Date.now()/1000/(60*60))%24)}</h3>
+                    <h3>{Math.floor((Date.now()%(1000*60*60*24))/(1000*60*60))}</h3>
+                    <h3>{Math.floor((Date.now()/1000/60)%60)}</h3>
+                    <h3>{Math.floor((Date.now()/1000)%60)}</h3>
                 </div>
                 <div>
                 {this.props.activity.map((itemInTheList,i)=>{
@@ -74,7 +89,7 @@ class MSchedule extends Component {
                         readOnly={true}
                         value={itemInTheList.name}>
                     </input>
-                    <button >Start</button>
+                    <button onClick={this.startTimer}>Start</button>
                     <input
                         className="labelText"
                         type="textbox"
@@ -91,10 +106,10 @@ class MSchedule extends Component {
                         className="labelText"
                         type="textbox"
                         readOnly={true}
-                        value="Time Left">
+                        value={this.state.isOn ? this.state.time:"Start Time"}>
                     </input>
-                    <button >Complete</button>
-                    <button >Stop</button>
+                    <button onClick={this.resetTimer}>Complete</button>
+                    <button onClick={this.stopTimer}>Stop</button>
                     <input
                         className="labelText"
                         type="textbox"

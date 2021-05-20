@@ -11,7 +11,7 @@ class MReview extends Component {
                 </div>
                 <div className="printReview">
                     <div className="printSelChallenges">
-                        <h3> Activities and Challenges waiting to be scheduled</h3>
+                        <h1> Activities and Challenges waiting to be scheduled</h1>
                         {this.props.activity.map((itemInTheList,i)=>{
                         return (itemInTheList.isSelected && (!itemInTheList.isMandatory))? (<label className="labels">
                         <input

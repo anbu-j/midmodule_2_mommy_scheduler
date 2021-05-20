@@ -21,7 +21,7 @@ class MScheduler extends Component {
           isActReady: false,
           isPriorityReady: false,
           isSummaryReady: false,
-          isSchedulerReady: true,
+          isSchedulerReady: false,
           isActivationReady: false,
 
           challenge:challenges,

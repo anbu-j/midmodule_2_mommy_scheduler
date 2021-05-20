@@ -31,13 +31,13 @@ class MChallenge extends Component {
         
         return (
             <div>
-                <h1>{console.log(this.props.itemInTheList)}</h1>
+                <h3>{console.log(this.props.itemInTheList)}</h3>
                 <div>
                     <h1> Mommy Challenges </h1> 
                 </div>
                 <div className="printChallenges">
                 <div className="printNonChallenges">
-                    <h3> Identify Challenges</h3>
+                    <h1> Identify Challenges</h1>
                     {this.props.challenge.map((itemInTheList,i)=>{
                     return itemInTheList.isSelected? '':(<label className="labels">
                     <input
@@ -75,7 +75,7 @@ class MChallenge extends Component {
                </div>
 
                 <div className="printSelChallenges">
-                    <h3> Selected Challenges</h3>
+                    <h1> Selected Challenges</h1>
                     {this.props.challenge.map((itemInTheList,i)=>{
                     return itemInTheList.isSelected? (<label className="labels">
                     <input
