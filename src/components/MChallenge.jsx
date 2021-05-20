@@ -20,6 +20,13 @@ class MChallenge extends Component {
         console.log(i)
         this.props.challengeSelected(itemInTheList,i)
     }
+    statusUnSelected=(itemInTheList,i)=>{
+        //this.props.challengeUnSelected(e.target.value);
+        //console.log(e.target.value)
+        console.log(itemInTheList)
+        console.log(i)
+        this.props.challengeUnSelected(itemInTheList,i)
+    }
     render() {
         
         return (
@@ -69,7 +76,7 @@ class MChallenge extends Component {
 
                 <div className="printSelChallenges">
                     <h3> Selected Challenges</h3>
-                    {this.state.challenge.map((itemInTheList,i)=>{
+                    {this.props.challenge.map((itemInTheList,i)=>{
                     return itemInTheList.isSelected? (<label className="labels">
                     <input
                         name="isChallenge"

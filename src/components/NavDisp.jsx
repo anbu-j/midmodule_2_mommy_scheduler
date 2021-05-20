@@ -23,7 +23,7 @@ function NavDisp() {
                                 <Nav.Link href='/MChallenge'>M Challenges</Nav.Link>
                                 <Nav.Link href='/MActivities'>M Activities</Nav.Link>
                                 <Nav.Link href='/MReview'>Review Schedule</Nav.Link>
-                                
+                                <Nav.Link href='/MSchedule'>Mommy's Schedule</Nav.Link>
                                 
                             </Nav>
                     {/*<Link to='/MommyChallenges'>Mommy Challenges</Link>

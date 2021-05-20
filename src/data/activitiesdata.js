@@ -5,7 +5,7 @@ const activities = [
         "isDailyTask":true,
         "name":"Cooking",
         "duration":'3',
-        "priority":1
+        "priority":7
    } ,
    {
         "isSelected":false,
@@ -64,8 +64,8 @@ const activities = [
         "priority":1
     } ,
     {
-        "isSelected":false,
-        "isMandatory":false,
+        "isSelected":true,
+        "isMandatory":true,
         "isDailyTask":true,
         "name":"Family time",
         "duration":'1',
@@ -85,7 +85,7 @@ const activities = [
         "isDailyTask":true,
         "name":"Recreation",
         "duration":'1',
-        "priority":1
+        "priority":'8'
     } 
 ]
 
