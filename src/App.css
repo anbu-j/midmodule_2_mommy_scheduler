@@ -12,13 +12,40 @@ h1{
     animation-name: slidein
   
 }
+.header{
+  background-color: grey;
+  border-style: hidden;
+  text-align: center;
+}
+.headerText{
+  width: 293px;
+  text-decoration-line: underline;
+  border-style: hidden;
+  background-color: grey;
+}
+.schHeader{
+ 
+  /*background-color: grey;*/
+  border-style: hidden;
+  text-align: center;
+  display: flex;
+}
+.schHeaderText{
+  width: 100px;
+  background-color: grey;
+  border-style: hidden;
+  text-align: center;
+}
 .Container1{
 border-style: solid;
 border-color:lightskyblue;
+width: auto;
+height: auto;
+background-color: khaki;
 }
 .InitialSetup{
   width:min-content;
-  border-style: dashed;
+  border-style:hidden;
   border-color: lightseagreen;
 }
 .labels{
@@ -26,6 +53,10 @@ border-color:lightskyblue;
   justify-content:last baseline;
   /*flex-direction: column;*/
   align-items: center;
+}
+.labelSetup{
+  width: 300px;
+  overflow-x: scroll;
 }
 .labelText {
   width: 100px;
@@ -45,7 +76,7 @@ border-color:lightskyblue;
 
 .printActivities {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .printNonActivities {
   border-style: dashed;
@@ -57,5 +88,13 @@ border-color:lightskyblue;
 }
 .printReview {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+/*Button {
+  padding-left: 250px;
+}*/
+.schHeaderButton {
+  background-color: grey;
+  border-style: hidden;
+  text-align: center;
 }

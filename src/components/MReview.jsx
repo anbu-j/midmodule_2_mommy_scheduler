@@ -10,8 +10,41 @@ class MReview extends Component {
                     <h1> Review selected Challenges and Activities! </h1> 
                 </div>
                 <div className="printReview">
-                    <div className="printSelChallenges">
-                        <h1> Activities and Challenges waiting to be scheduled</h1>
+                    <div className="printUnSelSchedule">
+                        <h1> Future Selections</h1>
+                        <label className="labels">
+            <input
+                            className="schCheckbox"
+                            type="checkbox"
+                            readOnly={true}
+                            checked={false}
+                        >
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Activities">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Priority">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Duration">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Type">
+                        </input>
+            </label>
                         {this.props.activity.map((itemInTheList,i)=>{
                         return (itemInTheList.isSelected && (!itemInTheList.isMandatory))? (<label className="labels">
                         <input
@@ -39,6 +72,12 @@ class MReview extends Component {
                             readOnly={true}
                             value={itemInTheList.priority}>
                         </input>
+                        <input
+                        className="labelText"
+                        type="textbox"
+                        readOnly={true}
+                        value="Daily Activity">
+                    </input>
                     </label>):'';
                         
                         //itemInTheList.name, itemInTheList. ;
@@ -68,6 +107,20 @@ class MReview extends Component {
                             readOnly={true}
                             value={itemInTheList.priority}>
                         </input>
+                        <input
+                        className="labelText"
+                        type="textbox"
+                        id="challengeDefaultDuration"
+                        placeholder={itemInTheList.duration}
+                        onChange={this.handleChange}
+                        >
+                    </input>
+                    <input
+                        className="labelText"
+                        type="textbox"
+                        readOnly={true}
+                        value="Challenge">
+                    </input>
                     </label>):'';
                         
                         //itemInTheList.name, itemInTheList. ;
@@ -77,15 +130,41 @@ class MReview extends Component {
 
                         }
                     </div>
-                    <div className="printSelActivities">
-                    <h3> Selected Schedule</h3>
-                {/*<label className="labels">
-                        <p> </p>
-                        <p>Acitvity</p>
-                        <p>Duration</p>
-                        <p>Daily/Weekly</p>
-                        <p>Mandatory</p>
-            </label>*/}
+                    <div className="printSelSchedule">
+                    <h1> Selected Schedule</h1>
+                    <label className="labels">
+            <input
+                            className="schCheckbox"
+                            type="checkbox"
+                            readOnly={true}
+                            checked={false}
+                        >
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Activities">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Priority">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Duration">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Type">
+                        </input>
+            </label>
                         {this.props.activity.map((itemInTheList,i)=>{
                         return (itemInTheList.isSelected && (itemInTheList.isMandatory))? (<label className="labels">
                         <input
@@ -113,6 +192,12 @@ class MReview extends Component {
                             readOnly={true}
                             value={itemInTheList.priority}>
                         </input>
+                        <input
+                        className="labelText"
+                        type="textbox"
+                        readOnly={true}
+                        value="Daily Activity">
+                    </input>
                     </label>):'';
                         
                         //itemInTheList.name, itemInTheList. ;
@@ -142,6 +227,20 @@ class MReview extends Component {
                             readOnly={true}
                             value={itemInTheList.priority}>
                         </input>
+                        <input
+                        className="labelText"
+                        type="textbox"
+                        id="challengeDefaultDuration"
+                        placeholder={itemInTheList.duration}
+                        onChange={this.handleChange}
+                        >
+                    </input>
+                    <input
+                        className="labelText"
+                        type="textbox"
+                        readOnly={true}
+                        value="Challenge">
+                    </input>
                     </label>):'';
                         
                         //itemInTheList.name, itemInTheList. ;

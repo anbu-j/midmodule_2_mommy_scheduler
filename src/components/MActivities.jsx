@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Button} from 'react-bootstrap';
 
 class MActivities extends Component {
     constructor(props){
@@ -29,12 +30,33 @@ class MActivities extends Component {
             </div>
             <div className="printActivities">
             <div className="printNonActivities">
+            <h1> Identify Activities</h1>
             <label className="labels">
-                    <p> </p>
-                    <p>Acitvity</p>
-                    <p>Duration</p>
-                    <p>Daily/Weekly</p>
-                    <p>Mandatory</p>
+            <input
+                            className="schCheckbox"
+                            type="checkbox"
+                            readOnly={true}
+                            checked={false}
+                        >
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Activities">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Priority">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Duration">
+                        </input>
         </label>
                     {this.props.activity.map((itemInTheList,i)=>{
                     return itemInTheList.isSelected? '': (<label className="labels">
@@ -54,31 +76,13 @@ class MActivities extends Component {
                         className="labelText"
                         type="textbox"
                         readOnly={true}
-                        value={itemInTheList.duration}>
-                    </input>
-                    <input
-                        className="labelText"
-                        type="textbox"
-                        readOnly={true}
-                        value={itemInTheList.isDailyTask}>
-                    </input>
-                    <input
-                        className="labelText"
-                        type="textbox"
-                        readOnly={true}
-                        value={itemInTheList.isMandatory}>
-                    </input>
-                    <input
-                        className="labelText"
-                        type="textbox"
-                        readOnly={true}
                         value={itemInTheList.priority}>
                     </input>
                     <input
                         className="labelText"
                         type="textbox"
                         readOnly={true}
-                        value={itemInTheList.isSelected }>
+                        value={itemInTheList.duration}>
                     </input>
                 </label>)
                     
@@ -90,13 +94,34 @@ class MActivities extends Component {
                     }
                 </div>
                 <div className="printSelActivities">
-            {/*<label className="labels">
-                    <p> </p>
-                    <p>Acitvity</p>
-                    <p>Duration</p>
-                    <p>Daily/Weekly</p>
-                    <p>Mandatory</p>
-        </label>*/}
+                <h1> Selected Challenges</h1>
+            <label className="labels">
+            <input
+                            className="schCheckbox"
+                            type="checkbox"
+                            readOnly={true}
+                            checked={false}
+                        >
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Activities">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Priority">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Duration">
+                        </input>
+            </label>
                     {this.props.activity.map((itemInTheList,i)=>{
                     return itemInTheList.isSelected? (<label className="labels">
                     <input
@@ -112,24 +137,7 @@ class MActivities extends Component {
                         readOnly={true}
                         value={itemInTheList.name}>
                     </input>
-                    <input
-                        className="labelText"
-                        type="textbox"
-                        readOnly={true}
-                        value={itemInTheList.duration}>
-                    </input>
-                    <input
-                        className="labelText"
-                        type="textbox"
-                        readOnly={true}
-                        value={itemInTheList.isDailyTask}>
-                    </input>
-                    <input
-                        className="labelText"
-                        type="textbox"
-                        readOnly={true}
-                        value={itemInTheList.isMandatory}>
-                    </input>
+                    
                     <input
                         className="labelText"
                         type="textbox"
@@ -140,7 +148,7 @@ class MActivities extends Component {
                         className="labelText"
                         type="textbox"
                         readOnly={true}
-                        value={itemInTheList.isSelected }>
+                        value={itemInTheList.duration}>
                     </input>
                 </label>):'';
                     
@@ -152,6 +160,11 @@ class MActivities extends Component {
                     }
                 </div>
                 </div>
+                <Button 
+                variant="outline-primary"
+                //onClick={()=>window.history.push("/MommyReview",{from:"MommyChallenges"})}
+                //onClick={React.cloneElement(this.props.children, {challenge: this.state.challenge.name})}
+                >Lock Activities</Button>
             </div>
         );
     }

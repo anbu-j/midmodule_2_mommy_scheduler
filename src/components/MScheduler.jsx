@@ -9,8 +9,7 @@ import NavDisp from './NavDisp';
 //import { BrowserRouter as Router } from 'react-router-dom';
 import {BrowserRouter as  Router,Route, Switch} from 'react-router-dom';
 
-localStorage.setItem("currArray1",JSON.stringify(challenges))
-localStorage.setItem("currArray2",JSON.stringify(activities))
+
 
 
 class MScheduler extends Component {
@@ -36,6 +35,8 @@ class MScheduler extends Component {
            /*currArray1 : challenges,*/
            
            }
+           localStorage.setItem("currArray1",JSON.stringify(challenges))
+            localStorage.setItem("currArray2",JSON.stringify(activities))
         };
     
     //const [currArray1, challengeSelection] = useState(challenge)
@@ -203,18 +204,42 @@ class MScheduler extends Component {
                   <Route path='/MommyChallenges'component={MommyChallenges} />
                   <Route path='/MommyActivities'component={MommyActivities} />
                   <Route path='/MommyReview'component={MommyReview} /> 
-                  <Route exact path='/'component={MScheduler} />*/}
-                  <Route exact path='/' render={()=>{return<div><h1>Please make a selection! </h1></div>}}/>
+                  <Route path='/MScheduler'component={MScheduler} />
+                  <Route exact path='/' component={MScheduler}/>*/}
+
+                  <Route exact path='/' render={()=>{return <div><h1>Please make a selection! </h1></div>}}/>
                   <Route path='/MChallenge' render={() => <MChallenge challenge ={JSON.parse(localStorage.getItem("currArray1"))} challengeSelected={this.challengeSelection} challengeUnSelected={this.challengeUnSelection}/>} />
                   <Route path='/MActivities'render={() => <MActivities activity ={JSON.parse(localStorage.getItem("currArray2"))} activitySelected={this.activitySelection} activityUnSelected={this.activityUnSelection} />} />
                   <Route path='/MReview' render={() => <MReview challenge ={JSON.parse(localStorage.getItem("currArray1"))} activity ={JSON.parse(localStorage.getItem("currArray2"))} ChallengeHours = {JSON.parse(localStorage.getItem("chalHours"))} ActivityHours = {JSON.parse(localStorage.getItem("actHours"))} />} />
-                  <Route path='/MSchedule' render={() => < MSchedule challenge ={JSON.parse(localStorage.getItem("currArray1"))} activity ={JSON.parse(localStorage.getItem("currArray2"))} />} />
+                  <Route path='/MSchedule' render={() => < MSchedule challenge ={JSON.parse(localStorage.getItem("currArray1"))} activity ={JSON.parse(localStorage.getItem("currArray2"))} />} /> 
+                 
                  {/*<Route path='/' render={()=>{return<div><h1>Please make a selection! </h1></div>}}/>*/}
+
+                 {/*<Link to='/' render={()=>{return <div><h1>Please make a selection! </h1></div>}}/>
+                  <Link to='/MChallenge' render={() => <MChallenge challenge ={JSON.parse(localStorage.getItem("currArray1"))} challengeSelected={this.challengeSelection} challengeUnSelected={this.challengeUnSelection}/>} />
+                  <Link to='/MActivities'render={() => <MActivities activity ={JSON.parse(localStorage.getItem("currArray2"))} activitySelected={this.activitySelection} activityUnSelected={this.activityUnSelection} />} />
+                  <Link to='/MReview' render={() => <MReview challenge ={JSON.parse(localStorage.getItem("currArray1"))} activity ={JSON.parse(localStorage.getItem("currArray2"))} ChallengeHours = {JSON.parse(localStorage.getItem("chalHours"))} ActivityHours = {JSON.parse(localStorage.getItem("actHours"))} />} />
+                <Link to='/MSchedule' render={() => < MSchedule challenge ={JSON.parse(localStorage.getItem("currArray1"))} activity ={JSON.parse(localStorage.getItem("currArray2"))} />} />*/}
                   </Switch>
                 
                 </Router>
                 </div>
                 <div className="InitialSetup">
+                    <label className="header">
+                        <input
+                            className="headerCheckbox"
+                            type="checkbox"
+                            readOnly={true}
+                            checked={false}
+                        >
+                        </input>
+                        <input
+                            className="headerText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Scheduler Setup steps and status">
+                        </input>
+                    </label>
                    
                     <label className="labels">
                         <input
@@ -225,16 +250,26 @@ class MScheduler extends Component {
                         > 
                         </input>
                         <input
-                            className="labelText"
+                            className="labelSetup"
                             type="textbox"
                             readOnly={true}
                             value="Identify Challenges">
                         </input>
-                        <button
-                            className="SetupButton"
-                        >
-                            Start
-                        </button>
+                    </label>
+                    <label className="labels">
+                        <input
+                            name="isSummaryReady"
+                            type="checkbox"
+                            readOnly={true}
+                            checked={this.state.isSummaryReady}
+                        > 
+                        </input>
+                        <input
+                            className="labelSetup"
+                            type="textbox"
+                            readOnly={true}
+                            value="Prioritize challenges">
+                        </input>
                     </label>
                     <label className="labels">
                         <input
@@ -245,16 +280,11 @@ class MScheduler extends Component {
                         > 
                         </input>
                         <input
-                            className="labelText"
+                            className="labelSetup"
                             type="textbox"
                             readOnly={true}
                             value="Identify activities part of the challenges">
                         </input>
-                        <button
-                            className="SetupButton"
-                        >
-                            Start
-                        </button>
                     </label>
 
                     
@@ -267,38 +297,14 @@ class MScheduler extends Component {
                         > 
                         </input>
                         <input
-                            className="labelText"
+                            className="labelSetup"
                             type="textbox"
                             readOnly={true}
                             value="Prioritize activities and time">
                         </input>
-                        <button
-                            className="SetupButton"
-                        >
-                            Start
-                        </button>
                     </label>
                     
-                    <label className="labels">
-                        <input
-                            name="isSummaryReady"
-                            type="checkbox"
-                            readOnly={true}
-                            checked={this.state.isSummaryReady}
-                        > 
-                        </input>
-                        <input
-                            className="labelText"
-                            type="textbox"
-                            readOnly={true}
-                            value="Prioritize challenges">
-                        </input>
-                        <button
-                            className="SetupButton"
-                        >
-                            Start
-                        </button>
-                    </label>
+
 
                     <label className="labels">
                         <input
@@ -309,16 +315,11 @@ class MScheduler extends Component {
                         > 
                         </input>
                         <input
-                            className="labelText"
+                            className="labelSetup"
                             type="textbox"
                             readOnly={true}
-                            value="Preview Scheduler">
+                            value="Preview and Lock Scheduler">
                         </input>
-                        <button
-                            className="SetupButton"
-                        >
-                            Start
-                        </button>
                     </label>
 
                     <label className="labels">
@@ -330,16 +331,11 @@ class MScheduler extends Component {
                         > 
                         </input>
                         <input
-                            className="labelText"
+                            className="labelSetup"
                             type="textbox"
                             readOnly={true} 
                             value="Activate Scheduler">
                         </input>
-                        <button
-                            className="SetupButton"
-                        >
-                            Start
-                        </button>
                     </label>
                 </div>
             </div>

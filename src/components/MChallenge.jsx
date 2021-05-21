@@ -6,12 +6,7 @@ import MScheduler from './MScheduler'
 class MChallenge extends Component {
     constructor(props){
         super(props)
-        this.state={
-           challenge:challenges,
-           name:"",
-           priority:'',
-           isSelected:false
-        }
+        
     }
     statusSelected=(itemInTheList,i)=>{
         //this.props.challengeSelected(e.target.value);
@@ -38,6 +33,33 @@ class MChallenge extends Component {
                 <div className="printChallenges">
                 <div className="printNonChallenges">
                     <h1> Identify Challenges</h1>
+                    <label className="schHeader">
+                        <input
+                            className="schCheckbox"
+                            type="checkbox"
+                            readOnly={true}
+                            checked={false}
+                        >
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Challenges">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Priority">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Duration">
+                        </input>
+                    </label>
                     {this.props.challenge.map((itemInTheList,i)=>{
                     return itemInTheList.isSelected? '':(<label className="labels">
                     <input
@@ -63,6 +85,14 @@ class MChallenge extends Component {
                         onChange={this.handleChange}
                         >
                     </input>
+                    <input
+                        className="labelText"
+                        type="textbox"
+                        id="challengeDefaultDuration"
+                        placeholder={itemInTheList.duration}
+                        onChange={this.handleChange}
+                        >
+                    </input>
                     
                 </label>);
                     
@@ -76,6 +106,33 @@ class MChallenge extends Component {
 
                 <div className="printSelChallenges">
                     <h1> Selected Challenges</h1>
+                    <label className="schHeader">
+                        <input
+                            className="schCheckbox"
+                            type="checkbox"
+                            readOnly={true}
+                            checked={false}
+                        >
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Challenges">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Priority">
+                        </input>
+                        <input
+                            className="schHeaderText"
+                            type="textbox"
+                            readOnly={true}
+                            value="Duration">
+                        </input>
+                    </label>
                     {this.props.challenge.map((itemInTheList,i)=>{
                     return itemInTheList.isSelected? (<label className="labels">
                     <input
@@ -96,6 +153,14 @@ class MChallenge extends Component {
                         type="textbox"
                         readOnly={true}
                         value={itemInTheList.priority}>
+                    </input>
+                    <input
+                        className="labelText"
+                        type="textbox"
+                        id="challengeDefaultDuration"
+                        placeholder={itemInTheList.duration}
+                        onChange={this.handleChange}
+                        >
                     </input>
                 </label>):'';
                     

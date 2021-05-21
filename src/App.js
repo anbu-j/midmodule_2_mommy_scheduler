@@ -8,6 +8,9 @@ import MChallenge from './components/MChallenge';
 import MActivities from './components/MActivities';
 import MReview from './components/MReview';
 
+import TestMScheduler from './components/MScheduler';
+
+
 //import {BrowserRouter as  Router,Route, Switch} from 'react-router-dom';
 
   
@@ -16,7 +19,7 @@ function App() {
   return (
     <div className="App">
      {/*<MommyScheduler />*/}
-     <MScheduler />          
+     <TestMScheduler />          
                 
                 
 

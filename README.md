@@ -67,7 +67,7 @@ Clone the Git repository to your local system <br>
 
 ## Features
 <!--1. Time left for activities  is highlighted with different colors.
-2. The selection made by the user on the on-screen keyboard turns the color of the key to
+2. The navigation is implemented for different pagesselection made by the user on the on-screen keyboard turns the color of the key to
     * "**Golden**" upon matching a letter in the mystery sentence 
     * "**Grey**" upon not matching a letter in the mystery sentence.
 3. Each time a key is selected, the players "**Turns left**"  and points "**Score**" are updated in the "**Score Board**".
