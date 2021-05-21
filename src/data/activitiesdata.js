@@ -1,6 +1,6 @@
 const activities = [
     {
-        "isSelected":false,
+        "isSelected":true,
         "isMandatory":false,
         "isDailyTask":true,
         "isOn":false,
@@ -36,7 +36,7 @@ const activities = [
         "priority":1
     } ,
     {
-        "isSelected":false,
+        "isSelected":true,
         "isMandatory":false,
         "isDailyTask":true,
         "isOn":false,
@@ -81,7 +81,7 @@ const activities = [
         "priority":1
     } ,
     {
-        "isSelected":false,
+        "isSelected":true,
         "isMandatory":false,
         "isDailyTask":true,
         "isOn":false,
@@ -90,7 +90,7 @@ const activities = [
         "priority":1
     } ,
     {
-        "isSelected":false,
+        "isSelected":true,
         "isMandatory":false,
         "isDailyTask":true,
         "isOn":false,

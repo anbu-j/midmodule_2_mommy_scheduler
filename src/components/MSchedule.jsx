@@ -196,7 +196,7 @@ class MSchedule extends Component {
                         readOnly={true}
                         value={itemInTheList.name}>
                     </input>
-                    <button >Start</button>
+                    <button onClick={this.state.isOn? '':this.startTimer}>Start</button>
                     <input
                         className="labelText"
                         type="textbox"
