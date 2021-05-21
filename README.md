@@ -56,7 +56,7 @@ Clone the Git repository to your local system <br>
 ```
 
 ## Usage
-<!--The Scheduler starts when the user selects the different checkboxes and clicks on the button "**Start **". The scheduler charts the schedule of activities based on priorities (* higher priority will be considered first- on a scale of (1-10) *) and check it with time duration for each activity to finish, calculates to find out the remaining time available in a day to finish the other activities with next high priority. If the user has still some free time left,then we will let user select from their challenges with highest priority and add it that to activity (*solving their challenge to find time to do *) and incorporate that to schedule chart.We have a timer to remind the user when to start and stop their activities in a time frame assigned. 
+The Scheduler starts when the user selects the different checkboxes and clicks on the button "**Start **". The scheduler charts the schedule of activities based on priorities (* higher priority will be considered first- on a scale of (1-10) *) and check it with time duration for each activity to finish, calculates to find out the remaining time available in a day to finish the other activities with next high priority. If the user has still some free time left,then we will let user select from their challenges with highest priority and add it that to activity (*solving their challenge to find time to do *) and incorporate that to schedule chart.We have a timer to remind the user when to start and stop their activities in a time frame assigned. 
 
  The Mommy Scheduler screen is split into 4 sections 
  * **M CHALLENGES :** It lets the the users to identify their "**Challenges**" from a table of common challenges facing in daily life and identified challenges will be displayed along with priorities.
@@ -66,8 +66,8 @@ Clone the Git repository to your local system <br>
 
 
 ## Features
-<!--1. Time left for activities  is highlighted with different colors.
-2. The navigation is implemented for different pagesselection made by the user on the on-screen keyboard turns the color of the key to
+1. Time left for activities  is highlighted with different colors.
+<!--2. The navigation is implemented for different pagesselection made by the user on the on-screen keyboard turns the color of the key to
     * "**Golden**" upon matching a letter in the mystery sentence 
     * "**Grey**" upon not matching a letter in the mystery sentence.
 3. Each time a key is selected, the players "**Turns left**"  and points "**Score**" are updated in the "**Score Board**".

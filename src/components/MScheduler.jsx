@@ -1,3 +1,13 @@
+
+/*MSchedule is the Parent page controlling all of the child pages.
+
+Route render method is used to navigate to child pages. route navigation takes 3 parameters.
+1. A copy of the localstorage of Challenge and Acitvity data
+2. A variable to perform state updates to challenge and activity data (....Selected, .....UnSelected)
+3. A variable to decide which activity/challenge makes it to the final scheduler
+*/
+
+
 import React, { Component } from 'react';
 import challenges from '../data/challengedata';
 import activities from '../data/activitiesdata';
@@ -208,8 +218,8 @@ class MScheduler extends Component {
                   <Route exact path='/' component={MScheduler}/>*/}
 
                   <Route exact path='/' render={()=>{return <div><h1>Please make a selection! </h1></div>}}/>
-                  <Route path='/MChallenge' render={() => <MChallenge challenge ={JSON.parse(localStorage.getItem("currArray1"))} challengeSelected={this.challengeSelection} challengeUnSelected={this.challengeUnSelection}/>} />
-                  <Route path='/MActivities'render={() => <MActivities activity ={JSON.parse(localStorage.getItem("currArray2"))} activitySelected={this.activitySelection} activityUnSelected={this.activityUnSelection} />} />
+                  <Route path='/MChallenge' render={() => <MChallenge challenge={JSON.parse(localStorage.getItem("currArray1"))} challengeSelected={this.challengeSelection} challengeUnSelected={this.challengeUnSelection}/>} />
+                  <Route path='/MActivities'render={() => <MActivities activity={JSON.parse(localStorage.getItem("currArray2"))} activitySelected={this.activitySelection} activityUnSelected={this.activityUnSelection} />} />
                   <Route path='/MReview' render={() => <MReview challenge ={JSON.parse(localStorage.getItem("currArray1"))} activity ={JSON.parse(localStorage.getItem("currArray2"))} ChallengeHours = {JSON.parse(localStorage.getItem("chalHours"))} ActivityHours = {JSON.parse(localStorage.getItem("actHours"))} />} />
                   <Route path='/MSchedule' render={() => < MSchedule challenge ={JSON.parse(localStorage.getItem("currArray1"))} activity ={JSON.parse(localStorage.getItem("currArray2"))} />} /> 
                  
