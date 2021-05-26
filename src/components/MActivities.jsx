@@ -5,14 +5,14 @@ class MActivities extends Component {
     constructor(props){
         super(props)
     }
-    statusSelected=(itemInTheList,i)=>{
+    statusSelected=(itemInTheList,i)=>{ // calls the parent page's activitySelected function and passes the selected activity in the list
         //this.props.challengeSelected(e.target.value);
         //console.log(e.target.value)
         console.log(itemInTheList)
         console.log(i)
         this.props.activitySelected(itemInTheList,i)
     }
-    statusUnSelected=(itemInTheList,i)=>{
+    statusUnSelected=(itemInTheList,i)=>{ // calls the parent pages activityUnSelected function and passes the unselected activity in the list
         //this.props.challengeSelected(e.target.value);
         //console.log(e.target.value)
         console.log(itemInTheList)

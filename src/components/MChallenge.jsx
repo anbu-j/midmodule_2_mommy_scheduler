@@ -8,14 +8,14 @@ class MChallenge extends Component {
         super(props)
         
     }
-    statusSelected=(itemInTheList,i)=>{
+    statusSelected=(itemInTheList,i)=>{ // calls the parent pages challengeSelected function and passes the selected challenge in the list
         //this.props.challengeSelected(e.target.value);
         //console.log(e.target.value)
         console.log(itemInTheList)
         console.log(i)
         this.props.challengeSelected(itemInTheList,i)
     }
-    statusUnSelected=(itemInTheList,i)=>{
+    statusUnSelected=(itemInTheList,i)=>{ // calls the parent pages challengeUnSelected function and passes the unselected challenge in the list
         //this.props.challengeUnSelected(e.target.value);
         //console.log(e.target.value)
         console.log(itemInTheList)

@@ -2,7 +2,10 @@ import React from 'react';
 //5. import link from react-router-dom so that we can make links to pages
 import {Link} from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
+import eventKey from 'react-bootstrap'
 import {BrowserRouter as Router} from 'react-router-dom'
+import MChallenge from './MChallenge'
+import { LinkContainer } from 'react-router-bootstrap';
 
 function NavDisp() {
     /*const navStyle = {
@@ -19,12 +22,14 @@ function NavDisp() {
                         <Navbar.Collapse id='responsive-navbar-nav'>
                             <Nav>
                                 {/*<Nav.Link href='/'>Mommy Scheduler</Nav.Link>
-                                <Link to='/MChallenges'>}>M Challenges</Link>*/}
-                                <Nav.Link href='/'></Nav.Link>
+                                <Link to='/MChallenges'>}>M Challenges</Link>
+                                <Nav.Item><Nav.Link href='/'></Nav.Link></Nav.Item>
+                                <LinkContainer to="/MChallenge"><Nav.link>M Challenge</Nav.link></LinkContainer >*/}
                                 <Nav.Link href='/MChallenge'>M Challenges</Nav.Link>
                                 <Nav.Link href='/MActivities'>M Activities</Nav.Link>
                                 <Nav.Link href='/MReview'>Review Schedule</Nav.Link>
                                 <Nav.Link href='/MSchedule'>Mommy's Schedule</Nav.Link>
+                                
                                 
                             </Nav>
                     {/*<Link to='/MommyChallenges'>Mommy Challenges</Link>

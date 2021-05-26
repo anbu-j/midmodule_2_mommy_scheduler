@@ -25,7 +25,7 @@ import {BrowserRouter as  Router,Route, Switch} from 'react-router-dom';
 class MScheduler extends Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = { // initializes the boolean variables holding state of child pages and the 2 data files
           isChallengeReady:false,
           isActReady: false,
           isPriorityReady: false,
@@ -45,14 +45,13 @@ class MScheduler extends Component {
            /*currArray1 : challenges,*/
            
            }
-           localStorage.setItem("currArray1",JSON.stringify(challenges))
-            localStorage.setItem("currArray2",JSON.stringify(activities))
+
         };
     
     //const [currArray1, challengeSelection] = useState(challenge)
     
 
-    challengeSelection = (itemInTheList,i) =>{
+    challengeSelection = (itemInTheList,i) =>{ // function updates the state and local storage with selection made in Challenges child page
         let currArray = this.state.challenge
         let newVal = currArray[i]
         newVal.isSelected = true
@@ -64,10 +63,10 @@ class MScheduler extends Component {
         )
         //console.log(itemInTheList)
         console.log(this.state.challenge)
-        localStorage.setItem("currArray1", JSON.stringify(currArray))
+        localStorage.setItem("currArray1", JSON.stringify(currArray)) // update the challenge data to local storage.
     
     }     
-    challengeUnSelection = (itemInTheList,i) =>{
+    challengeUnSelection = (itemInTheList,i) =>{ // function updates the state and local storage with unselection made in Challenges child page
         let currArray = this.state.challenge
         let newVal = currArray[i]
         newVal.isSelected = false
@@ -79,10 +78,10 @@ class MScheduler extends Component {
         )
         //console.log(itemInTheList)
         console.log(this.state.challenge)
-        localStorage.setItem("currArray1", JSON.stringify(currArray))
+        localStorage.setItem("currArray1", JSON.stringify(currArray)) // update the challenge data to local storage.
     }     
 
-    activitySelection = (itemInTheList,i) =>{
+    activitySelection = (itemInTheList,i) =>{ // function updates the state and local storage with selection made in Activity child page
         let currArray = this.state.activity
         let newVal = currArray[i]
         newVal.isSelected = true
@@ -94,10 +93,10 @@ class MScheduler extends Component {
         )
         //console.log(itemInTheList)
         console.log(this.state.activity)
-        localStorage.setItem("currArray2", JSON.stringify(currArray))
+        localStorage.setItem("currArray2", JSON.stringify(currArray)) // update the activities data to local storage.
     
     }    
-    activityUnSelection = (itemInTheList,i) =>{
+    activityUnSelection = (itemInTheList,i) =>{ // function updates the state and local storage with unselection made in Activities child page
         let currArray = this.state.activity
         let newVal = currArray[i]
         newVal.isSelected = false
@@ -109,11 +108,11 @@ class MScheduler extends Component {
         )
         //console.log(itemInTheList)
         console.log(this.state.activity)
-        localStorage.setItem("currArray2", JSON.stringify(currArray))
+        localStorage.setItem("currArray2", JSON.stringify(currArray)) // update the activities data to local storage.
     
     }  
 
-    reviewActSelection=(i) => {
+    reviewActSelection=(i) => {   // function updates the state and local storage with selection made in Review child page for activities
         let currArray = this.state.activity
         let newVal = currArray[i]
         newVal.isMandatory = true
@@ -125,10 +124,10 @@ class MScheduler extends Component {
         )
         //console.log(itemInTheList)
         console.log(this.state.activity)
-        localStorage.setItem("currArray2", JSON.stringify(currArray))
+        localStorage.setItem("currArray2", JSON.stringify(currArray)) // update the review data to local storage.
     }
 
-    reviewChalSelection=(i) => {
+    reviewChalSelection=(i) => { // function updates the state and local storage with selection made in Review child page for challenges
         let currArray = this.state.challenge
         let newVal = currArray[i]
         newVal.isMandatory = true
@@ -139,11 +138,11 @@ class MScheduler extends Component {
             }
         )
         //console.log(itemInTheList)
-        console.log(this.state.activity)
-        localStorage.setItem("currArray1", JSON.stringify(currArray))
+        console.log(this.state.activity) 
+        localStorage.setItem("currArray1", JSON.stringify(currArray)) // update the review data to local storage.
     }
 
-    activityReview=()=>{
+    activityReview=()=>{ //ensures challenges and activities do not exceed 24 hours. 2. Creates an isMandatory boolean variable to determine the final selection of activities and challenges.
         let chalMaxVal = Math.max.apply(Math, JSON.parse(localStorage.getItem("currArray1")).map(function(o) {return o.priority}))
         let actMaxVal = Math.max.apply(Math, JSON.parse(localStorage.getItem("currArray2")).map(function(o) {return o.priority}))
         let actHours = 0
@@ -153,7 +152,7 @@ class MScheduler extends Component {
         //console.log(actArray)
         console.log(chalArray)
         console.log(chalMaxVal)
-        for (let i = 1; i<=actMaxVal; i++) {
+        for (let i = 1; i<=actMaxVal; i++) { // function called to find the total hours spent by the selected activities and ensure it is less than 24 hours.
         actArray.map((itemInTheList,j)=>{
             /*console.log(actArray[j].name)
             console.log(actArray[j].priority)
@@ -168,7 +167,7 @@ class MScheduler extends Component {
         });
     }
     //console.log(actHours)
-    for (let k = 1; k<=chalMaxVal; k++) {
+    for (let k = 1; k<=chalMaxVal; k++) { // function called to find the total hours spent by the selected challenges.
         chalArray.map((itemInTheList,m)=>{
             /*console.log(chalArray[m].name)
             console.log(chalArray[m].priority)
@@ -182,11 +181,10 @@ class MScheduler extends Component {
             }
         });
     }
-    localStorage.setItem("actHours",actHours);
-    localStorage.setItem("chalHours",chalHours);
+    localStorage.setItem("actHours",actHours); // update the total time for selected activities to local storage
+    localStorage.setItem("chalHours",chalHours); // update the total time for selected challenges to local storage
     }
 
-    
 
 
     render() {

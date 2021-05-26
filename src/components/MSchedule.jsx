@@ -24,7 +24,7 @@ class MSchedule extends Component {
         this.stopTimer = this.stopTimer.bind(this)
         this.resetTimer = this.resetTimer.bind(this)
       }
-      startTimer() {
+      startTimer() { // function called to display start time upon click of start button and initialize timer.
         this.setState({
           isOn: true,
           //this.state.challenge.isOn:true,
@@ -44,7 +44,7 @@ class MSchedule extends Component {
         }), 1000);
 
       }
-      stopTimer() {
+      stopTimer() { // function called to stop the timer and reset the start button
         this.setState(
           {
             isOn: false,
@@ -54,7 +54,7 @@ class MSchedule extends Component {
 
         clearInterval(this.timer)
       }
-      resetTimer() {
+      resetTimer() { // // function called to stop the timer and reset the start button/time.
         this.setState(
           {
             time: 0, 
